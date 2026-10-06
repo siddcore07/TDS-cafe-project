@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDS — Taste • Dine • Sip</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <div class="brand"><span class="brand-mark">TDS</span><div><b>Taste • Dine • Sip</b><small>Chai · Coffee · Bites · Conversations</small></div></div>
+  <nav>
+    <a href="#home">Home</a><a href="#menu">Menu</a><a href="#order">My Order</a><a href="#track">Track</a><a href="#reviews">Reviews</a>
+  </nav>
+  <button class="cart-btn" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <span class="pill">☕ Smart Dine-In Café</span>
+    <h1>Good food.<br><em>Good mood.</em><br>Great conversations.</h1>
+    <p>Scan your table QR, explore the menu, customise your food and order without waiting.</p>
+    <div class="hero-actions"><a class="btn primary" href="#menu">Explore Menu</a><button class="btn ghost" onclick="demoTable()">Join Table 07</button></div>
+    <div class="hero-stats"><span><b>₹49+</b><small>Student-friendly</small></span><span><b>4.8★</b><small>Café rating</small></span><span><b>100%</b><small>Dine-in</small></span></div>
+  </div>
+  <div class="hero-card">
+    <div class="welcome-photo-wrap">
+      <img class="welcome-photo" src="https://images.pexels.com/photos/38757822/pexels-photo-38757822.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cozy café ambience">
+      <span class="photo-badge">TDS AMBIENCE</span>
+    </div>
+    <div class="table-chip">TABLE 07 <span class="live-dot"></span></div>
+    <h3>Welcome to TDS</h3>
+    <p>Your table is ready. Order together, track together.</p>
+    <button class="btn dark" onclick="demoTable()">Start Table Order →</button>
+  </div>
+</section>
+
+<section class="section intro">
+  <div><span class="eyebrow">HOW IT WORKS</span><h2>Your table. Your order. Your way.</h2></div>
+  <div class="steps"><div><b>01</b><strong>Scan QR</strong><span>Open your table's private ordering session.</span></div><div><b>02</b><strong>Build Order</strong><span>Choose, customise and add items.</span></div><div><b>03</b><strong>Track Live</strong><span>Watch kitchen status in real time.</span></div><div><b>04</b><strong>Pay & Enjoy</strong><span>Request your bill when you're done.</span></div></div>
+</section>
+
+<section id="menu" class="section menu-section">
+  <div class="section-head"><div><span class="eyebrow">OUR MENU</span><h2>Made for café cravings.</h2></div><div class="search"><span>⌕</span><input id="search" placeholder="Search food or drinks..." oninput="renderMenu()"></div></div>
+  <div class="filters" id="filters"></div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<section id="order" class="section order-section">
+  <div class="order-panel">
+    <div><span class="eyebrow">TABLE SESSION</span><h2>Table <span id="tableNo">07</span> · Active Order</h2><p class="muted">Multiple people can add items to the same table order.</p></div>
+    <div class="session-badge"><span class="live-dot"></span> LIVE</div>
+  </div>
+  <div class="order-layout">
+    <div class="table-visual"><div class="table-top">TABLE 07<div class="seat s1">A</div><div class="seat s2">B</div><div class="seat s3">C</div><div class="seat s4">D</div></div><p>4 seats · Shared order enabled</p><button class="btn outline" onclick="request('waiter')">🔔 Call Waiter</button></div>
+    <div class="current-order" id="currentOrder"><h3>Your table order</h3><div id="orderItems"></div><div class="total-line"><span>Subtotal</span><b id="subtotal">₹0</b></div><button class="btn primary full" onclick="beginCheckout()">Order Now</button></div>
+  </div>
+</section>
+
+
+<section id="checkout" class="section checkout-section">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">CHECKOUT</span>
+      <h2>One last step before we send it.</h2>
+      <p class="muted">Apply one of the TDS coupons below to unlock your order.</p>
+    </div>
+    <span class="checkout-badge">TABLE 07</span>
+  </div>
+  <div class="checkout-layout">
+    <div class="coupon-panel">
+      <div class="coupon-title"><h3>🎟️ Apply Coupon</h3><span>Choose 1 offer</span></div>
+      <div class="coupon-cards">
+        <button class="coupon-card" onclick="selectCoupon('TDS10')"><b>TDS10</b><span>10% OFF</span><small>On your total bill</small></button>
+        <button class="coupon-card" onclick="selectCoupon('STUDENT15')"><b>STUDENT15</b><span>15% OFF</span><small>Student special</small></button>
+        <button class="coupon-card" onclick="selectCoupon('WELCOME50')"><b>WELCOME50</b><span>₹50 OFF</span><small>On orders ₹300+</small></button>
+        <button class="coupon-card" onclick="selectCoupon('CHAI20')"><b>CHAI20</b><span>20% OFF</span><small>For café cravings</small></button>
+      </div>
+      <div class="coupon-entry">
+        <input id="couponInput" placeholder="Enter coupon code">
+        <button class="btn primary" onclick="applyCoupon()">Apply</button>
+      </div>
+      <p id="couponMessage" class="coupon-message">Select a coupon or enter a code.</p>
+    </div>
+    <div class="checkout-summary">
+      <h3>Order Summary</h3>
+      <div id="checkoutItems"></div>
+      <div class="bill-line"><span>Subtotal</span><b id="checkoutSubtotal">₹0</b></div>
+      <div class="bill-line discount-line"><span>Coupon Discount</span><b id="checkoutDiscount">−₹0</b></div>
+      <div class="bill-line"><span>GST (5%)</span><b id="checkoutGst">₹0</b></div>
+      <div class="bill-grand"><span>Total</span><b id="checkoutTotal">₹0</b></div>
+      <button id="sendOrderBtn" class="btn primary full send-order-btn" onclick="sendOrder()" disabled>Apply Coupon to Continue</button>
+    </div>
+  </div>
+</section>
+
+<section id="track" class="section track-section">
+  <div class="section-head"><div><span class="eyebrow">LIVE TRACKING</span><h2>Order status</h2></div><span class="status-pill" id="orderStatus">Not placed</span></div>
+  <div class="timeline"><div class="tl active" id="t1"><span>1</span><b>New Order</b><small>Waiting for kitchen</small></div><div class="tl" id="t2"><span>2</span><b>Preparing</b><small>Chef is working on it</small></div><div class="tl" id="t3"><span>3</span><b>Ready</b><small>Coming to your table</small></div><div class="tl" id="t4"><span>4</span><b>Served</b><small>Enjoy your meal</small></div></div>
+</section>
+
+
+
+<section id="reviews" class="section reviews-section">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">REVIEWS & LOCATION</span>
+      <h2>What our guests say.</h2>
+    </div>
+    <div class="rating-summary"><strong>4.8 ★</strong><span>Based on 128 reviews</span></div>
+  </div>
+
+  <div class="reviews-layout">
+    <div class="reviews-list">
+      <article class="review-card">
+        <div class="review-top"><div class="avatar">A</div><div><b>Aarav</b><small>Student · 2 days ago</small></div><span>★★★★★</span></div>
+        <p>“The ordering system is really convenient. The cold coffee and fries were great, and we didn't have to wait for the waiter.”</p>
+      </article>
+      <article class="review-card">
+        <div class="review-top"><div class="avatar">S</div><div><b>Siya</b><small>Student · 5 days ago</small></div><span>★★★★★</span></div>
+        <p>“Loved the café vibe and the dessert options. The shared table order is especially useful when friends order together.”</p>
+      </article>
+      <article class="review-card">
+        <div class="review-top"><div class="avatar">R</div><div><b>Rohan</b><small>Guest · 1 week ago</small></div><span>★★★★☆</span></div>
+        <p>“Affordable menu, quick service and a nice place to sit and talk. The TDS Student Combo is worth trying.”</p>
+      </article>
+
+      <div class="write-review">
+        <div>
+          <span class="eyebrow">YOUR EXPERIENCE</span>
+          <h3>Leave a review</h3>
+        </div>
+        <div class="star-picker" id="starPicker" aria-label="Choose rating">
+          <button type="button" onclick="setRating(1)">★</button>
+          <button type="button" onclick="setRating(2)">★</button>
+          <button type="button" onclick="setRating(3)">★</button>
+          <button type="button" onclick="setRating(4)">★</button>
+          <button type="button" onclick="setRating(5)">★</button>
+        </div>
+        <input id="reviewName" class="review-input" placeholder="Your name">
+        <textarea id="reviewText" class="review-input" rows="4" placeholder="Tell us about your TDS experience..."></textarea>
+        <button class="btn primary" onclick="submitReview()">Post Review</button>
+      </div>
+    </div>
+
+    <aside class="location-card">
+      <div class="location-head">
+        <span class="eyebrow">VISIT TDS</span>
+        <h3>Find us in Nagpur</h3>
+        <p><b>📍 TDS Cafe — The Daily Sip</b><br>
+        Police Nagar Rd, nearby Mentroin Hotel, Police Nagar, Nagpur, Maharashtra 440016<br>
+        <a class="phone-link" href="tel:+919370748326">📞 +91 93707 48326</a></p>
+        <a class="map-link" href="https://maps.app.goo.gl/fxiPA6mr4Z6z4zDYA" target="_blank" rel="noopener">Open exact location in Google Maps ↗</a>
+      </div>
+      <iframe
+        class="map-frame"
+        title="TDS Cafe The Daily Sip location in Nagpur"
+        src="https://www.google.com/maps?q=TDS%20Cafe%20The%20Daily%20Sip%2C%20Police%20Nagar%20Rd%2C%20Nagpur%2C%20Maharashtra%20440016&output=embed"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+      <div class="location-info">
+        <div><b>🕐 Opening Hours</b><span>10:00 AM – 10:00 PM</span></div>
+        <div><b>☕ Service</b><span>Dine-in only</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section closing-note">
+  <div class="closing-card">
+    <span class="eyebrow">A LITTLE TDS NOTE</span>
+    <h2>Come for the chai, stay for the conversations.</h2>
+    <p>At TDS, every cup, bite and shared table is made to turn an ordinary break into a warm little memory.</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="brand"><span class="brand-mark">TDS</span><div><b>Taste • Dine • Sip</b><small>Made for moments that matter.</small></div></div><div>© 2026 TDS Café · Dine-in only</div></footer>
+
+<div class="toast" id="toast"></div>
+<div class="modal" id="cartModal"><div class="modal-box"><button class="close" onclick="closeCart()">×</button><h2>Your Table Cart</h2><div id="modalItems"></div><div class="total-line"><b>Total</b><b id="modalTotal">₹0</b></div><button class="btn primary full" onclick="beginCheckout()">Order Now</button></div></div>
+
+<div class="modal" id="billModal">
+  <div class="modal-box bill-modal-box">
+    <button class="close" onclick="closeBill()">×</button>
+    <div class="invoice-brand">
+      <div class="brand-mark">TDS</div>
+      <div><strong>TDS Cafe — The Daily Sip</strong><small>Taste • Dine • Sip</small></div>
+    </div>
+    <div class="bill-header">
+      <span class="eyebrow">TAX / ORDER INVOICE</span>
+      <h2>TDS Invoice</h2>
+      <p>Police Nagar Rd, near Mentroin Hotel, Nagpur · +91 93707 48326</p>
+    </div>
+    <div class="invoice-meta">
+      <span>Invoice No. <b id="invoiceNo">TDS-0001</b></span>
+      <span>Date <b id="invoiceDate">—</b></span>
+      <span>Table <b>07</b></span>
+    </div>
+    <div class="invoice-items-head"><span>Item</span><span>Amount</span></div>
+    <div id="billItems"></div>
+    <div class="bill-line"><span>Subtotal</span><b id="billSubtotal">₹0</b></div>
+    <div class="bill-line discount-line"><span>Coupon Discount</span><b id="billDiscount">−₹0</b></div>
+    <div class="bill-line"><span>GST (5%)</span><b id="billGst">₹0</b></div>
+    <div class="bill-grand"><span>Grand Total</span><b id="billTotal">₹0</b></div>
+    <div class="bill-thanks">✓ Thank you for visiting TDS Café. We hope to see you again!</div>
+    <div class="invoice-actions">
+      <button class="btn primary full" onclick="printInvoice()">🖨 Print Invoice</button>
+      <button class="btn outline full" onclick="closeBill()">Done</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
