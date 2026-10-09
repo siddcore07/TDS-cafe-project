@@ -1,43 +1,43 @@
 const menu=[
-["TDS Special","Bun Maska",40,"assets/bun-maska-new.jpg","Buttery bun maska, warm and freshly served."],
+["TDS Special","Bun Maska",40,"bun-maska-new.jpg","Buttery bun maska, warm and freshly served."],
 
-["Snacks","French Fries",89,"assets/french-fries.jpg","Crispy golden fries."],
-["Snacks","Peri Peri Fries",109,"assets/peri-peri-fries.jpg","Spicy and crispy fries."],
-["Snacks","Potato Wedges",109,"assets/potato-wedges.jpg","Seasoned and crunchy potato wedges."],
-["Snacks","Garlic Bread",99,"assets/garlic-bread.jpg","Toasted bread with herbs and garlic."],
-["Snacks","Cheese Garlic Bread",129,"assets/cheese-garlic-bread.jpg","Garlic bread loaded with cheese."],
-["Snacks","Nachos & Cheese",119,"assets/nachos-cheese.jpg","Crunchy nachos with cheese dip."],
-["Snacks","Veg Spring Rolls",119,"assets/veg-spring-rolls.jpg","Crispy rolls with fresh veggies."],
-["Snacks","Cheese Balls",129,"assets/cheese-balls.jpg","Crunchy outside, cheesy inside."],
-["Snacks","Chilli Cheese Toast",109,"assets/chilli-cheese-toast.jpg","Spicy and cheesy toasted bites."],
-["Snacks","Paneer Nuggets",139,"assets/paneer-nuggets.jpg","Soft paneer with crispy coating."],
+["Snacks","French Fries",89,"french-fries.jpg","Crispy golden fries."],
+["Snacks","Peri Peri Fries",109,"peri-peri-fries.jpg","Spicy and crispy fries."],
+["Snacks","Potato Wedges",109,"potato-wedges.jpg","Seasoned and crunchy potato wedges."],
+["Snacks","Garlic Bread",99,"garlic-bread.jpg","Toasted bread with herbs and garlic."],
+["Snacks","Cheese Garlic Bread",129,"cheese-garlic-bread.jpg","Garlic bread loaded with cheese."],
+["Snacks","Nachos & Cheese",119,"nachos-cheese.jpg","Crunchy nachos with cheese dip."],
+["Snacks","Veg Spring Rolls",119,"veg-spring-rolls.jpg","Crispy rolls with fresh veggies."],
+["Snacks","Cheese Balls",129,"cheese-balls.jpg","Crunchy outside, cheesy inside."],
+["Snacks","Chilli Cheese Toast",109,"chilli-cheese-toast.jpg","Spicy and cheesy toasted bites."],
+["Snacks","Paneer Nuggets",139,"paneer-nuggets.jpg","Soft paneer with crispy coating."],
 
 
-["Beverages","Masala Chai",20,"assets/masala-chai-new.jpg","Warm Indian chai with aromatic spices."],
+["Beverages","Masala Chai",20,"masala-chai-new.jpg","Warm Indian chai with aromatic spices."],
 ["Beverages","Green Tea",89,"https://tegaorganictea.com/cdn/shop/articles/GTM-20-Cup_3024x.png?v=1742089567","Light, refreshing green tea."],
-["Beverages","Cold Coffee",119,"assets/cold-coffee.jpg","Chilled coffee with cream and chocolate."],
-["Beverages","Cappuccino",99,"assets/cappuccino.jpg","Rich espresso with steamed milk foam."],
-["Beverages","Café Latte",109,"assets/cafe-latte.jpg","Smooth espresso with creamy steamed milk."],
-["Beverages","Americano",89,"assets/americano.jpg","Bold and refreshing black coffee."],
-["Beverages","Café Mocha",119,"assets/cafe-mocha.jpg","Coffee with rich chocolate flavour."],
-["Beverages","Iced Latte",119,"assets/iced-latte.jpg","Chilled espresso with cold milk."],
-["Beverages","Virgin Mojito",109,"assets/virgin-mojito.jpg","Mint, lime and soda — pure refreshment."],
-["Beverages","Fresh Lime Soda",79,"assets/fresh-lime-soda.jpg","Zesty, fizzy and fresh."],
-["Beverages","Oreo Milkshake",149,"assets/oreo-milkshake.jpg","Creamy milkshake with Oreo bites."],
-["Beverages","Chocolate Milkshake",139,"assets/chocolate-milkshake.jpg","Rich, thick and chocolatey."],
-["Beverages","Peach Iced Tea",99,"assets/peach-iced-tea.jpg","Fruity, refreshing and cool."],
-["Beverages","Hot Chocolate",129,"assets/hot-chocolate.jpg","Rich chocolate with whipped cream."],
+["Beverages","Cold Coffee",119,"cold-coffee.jpg","Chilled coffee with cream and chocolate."],
+["Beverages","Cappuccino",99,"cappuccino.jpg","Rich espresso with steamed milk foam."],
+["Beverages","Café Latte",109,"cafe-latte.jpg","Smooth espresso with creamy steamed milk."],
+["Beverages","Americano",89,"americano.jpg","Bold and refreshing black coffee."],
+["Beverages","Café Mocha",119,"cafe-mocha.jpg","Coffee with rich chocolate flavour."],
+["Beverages","Iced Latte",119,"iced-latte.jpg","Chilled espresso with cold milk."],
+["Beverages","Virgin Mojito",109,"virgin-mojito.jpg","Mint, lime and soda — pure refreshment."],
+["Beverages","Fresh Lime Soda",79,"fresh-lime-soda.jpg","Zesty, fizzy and fresh."],
+["Beverages","Oreo Milkshake",149,"oreo-milkshake.jpg","Creamy milkshake with Oreo bites."],
+["Beverages","Chocolate Milkshake",139,"chocolate-milkshake.jpg","Rich, thick and chocolatey."],
+["Beverages","Peach Iced Tea",99,"peach-iced-tea.jpg","Fruity, refreshing and cool."],
+["Beverages","Hot Chocolate",129,"hot-chocolate.jpg","Rich chocolate with whipped cream."],
 
-["Desserts","Chocolate Brownie",99,"assets/chocolate-brownie.jpg","Rich and fudgy."],
-["Desserts","Brownie with Ice Cream",139,"assets/brownie-ice-cream.jpg","Warm brownie with vanilla ice cream."],
-["Desserts","Chocolate Lava Cake",149,"assets/chocolate-lava-cake.jpg","Molten chocolate delight."],
-["Desserts","Chocolate Sundae",129,"assets/chocolate-sundae.jpg","Layers of chocolate and creamy ice cream."],
-["Desserts","Vanilla Ice Cream",79,"assets/vanilla-ice-cream.jpg","Classic and creamy."],
-["Desserts","Chocolate Ice Cream",89,"assets/chocolate-ice-cream.jpg","Rich and smooth chocolate ice cream."],
-["Desserts","Oreo Sundae",139,"assets/oreo-sundae.jpg","Cookies, cream and chocolate."],
-["Desserts","Chocolate Mousse",119,"assets/chocolate-mousse.jpg","Light and luxurious chocolate mousse."],
-["Desserts","Caramel Custard",109,"assets/caramel-custard.jpg","Silky and smooth."],
-["Desserts","Nutella Brownie",149,"assets/nutella-brownie.jpg","Chocolatey brownie with a rich spread."],
+["Desserts","Chocolate Brownie",99,"chocolate-brownie.jpg","Rich and fudgy."],
+["Desserts","Brownie with Ice Cream",139,"brownie-ice-cream.jpg","Warm brownie with vanilla ice cream."],
+["Desserts","Chocolate Lava Cake",149,"chocolate-lava-cake.jpg","Molten chocolate delight."],
+["Desserts","Chocolate Sundae",129,"chocolate-sundae.jpg","Layers of chocolate and creamy ice cream."],
+["Desserts","Vanilla Ice Cream",79,"vanilla-ice-cream.jpg","Classic and creamy."],
+["Desserts","Chocolate Ice Cream",89,"chocolate-ice-cream.jpg","Rich and smooth chocolate ice cream."],
+["Desserts","Oreo Sundae",139,"oreo-sundae.jpg","Cookies, cream and chocolate."],
+["Desserts","Chocolate Mousse",119,"chocolate-mousse.jpg","Light and luxurious chocolate mousse."],
+["Desserts","Caramel Custard",109,"caramel-custard.jpg","Silky and smooth."],
+["Desserts","Nutella Brownie",149,"nutella-brownie.jpg","Chocolatey brownie with a rich spread."],
 
 ];
 
@@ -49,7 +49,8 @@ function renderMenu(){
  const q=document.getElementById("search").value.toLowerCase();
  const data=menu.filter(x=>(category==="All"||x[0]===category)&&x[1].toLowerCase().includes(q));
  document.getElementById("menuGrid").innerHTML=data.map((x,i)=>{
-   const isImage=typeof x[3]==="string" && (/^https?:\/\//.test(x[3]) || x[3].startsWith("assets/"));
+   const isImage = typeof x[3] === "string" &&
+  (/^https?:\/\//.test(x[3]) || /\.(jpg|jpeg|png|webp|gif)$/i.test(x[3]));
    const visual=isImage ? `<img src="${x[3]}" alt="${x[1]}" loading="lazy">` : `<span>${x[3]}</span>`;
    return `<article class="food"><div class="food-img ${isImage?'photo':''}">${visual}</div><div class="food-body"><div class="food-cat">${x[0]}</div><h3>${x[1]}</h3><p>${x[4]}</p><div class="food-foot"><span class="price">₹${x[2]}</span><button class="add" onclick="addItem('${x[1].replace(/'/g,"\\'")}')">+ Add</button></div></div></article>`;
  }).join("")||"<p>No items found.</p>";
